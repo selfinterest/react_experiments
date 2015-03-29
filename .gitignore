@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.sass-cache/
+.idea/
+react.iml
+
+app/bower_components
