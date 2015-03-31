@@ -2,7 +2,7 @@
 var React = window.React = require('react'),
     Timer = require("./ui/Timer"),
     Menu = require("./components/Menu"),
-    mountNode = document.body
+    mountNode = document.body;
 
 var TodoList = React.createClass({
   render: function() {

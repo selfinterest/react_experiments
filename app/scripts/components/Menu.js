@@ -27,26 +27,29 @@ var Menu = React.createClass({
         // and will return a new array with <li> elements.
 
         return (
-            <div>
-                <ul>{ this.props.items.map(function(m, index){
+            <nav className="navbar navbar-default">
+                <div className="container-fluid">
+                    <div className="navbar-header">
+                        <a className="navbar-brand" href="/">React!</a>
+                    </div>
+                    <div className="collapse navbar-collapse">
+                        <ul className="nav navbar-nav">
+                            {
+                                this.props.items.map(function (m, index) {
+                                    var style = '';
 
-                    var style = '';
+                                    if(self.state.focused == index){
+                                        style = 'active';
+                                    }
 
-                    if(self.state.focused == index){
-                        style = 'focused';
-                    }
+                                    return <li className={style} onClick={self.clicked.bind(self, index)}><a href={m.link}>{m.label}</a></li>
 
-                    // Notice the use of the bind() method. It makes the
-                    // index available to the clicked function:
-
-                    return <li className={style} onClick={self.clicked.bind(self, index)}>{m}</li>;
-
-                }) }
-
-                </ul>
-
-                <p>Selected: {this.props.items[this.state.focused]}</p>
-            </div>
+                                })
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         );
 
     }

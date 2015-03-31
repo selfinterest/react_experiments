@@ -12,9 +12,9 @@ var $ = require('gulp-load-plugins')();
 var browserify = require('browserify');
 var watchify = require('watchify');
 var source = require('vinyl-source-stream'),
-    
+
     sourceFile = './app/scripts/app.js',
-    
+
     destFolder = './dist/scripts',
     destFileName = 'app.js';
 
@@ -70,8 +70,8 @@ gulp.task('buildScripts', function() {
 gulp.task('jade', function () {
     return gulp.src('app/template/*.jade')
         .pipe($.jade({ pretty: true }))
-        .pipe(gulp.dest('dist'));
-})
+        .pipe(gulp.dest('dist/template'));
+});
 
 
 
